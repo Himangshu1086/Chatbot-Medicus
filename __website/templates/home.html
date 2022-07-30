@@ -5,60 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="static/style.css">
 </head>
 <body>
     <nav>
-        <h1 style="color:white;letter-spacing:2px;font-size:30px;">Chatbot</h1>
+        <a href="/" style="text-decoration: none;"><h1 style="color:white;letter-spacing:2px;font-size:30px;">Medicus</h1></a>
     </nav>
     <div class="container">
-        <div class="chat-window">
-            <div class="bot">
-                <p>bot</p>
+        <div id="chatbox" class="box-chat">
+           
+            <div id="you" class="answer">
+                <strong style="background-color: rgb(24, 118, 152);margin:10px;padding: 5px; border-radius: 5px;position: absolute;">You :</strong><p id="userQ">
+                    {{query}} ?</p>
             </div>
-            <div class="answer">
-                <p>hello</p>
+            
+            <div id="ans" class="bot">
+                <p style="text-align: justify;"><strong style="background-color: rgb(219, 122, 193);margin:7px;padding: 5px; border-radius: 5px;">Medicus :</strong>
+
+                {{answer}}
+                </p>
+                {%if answer %}
+                <p id="helpful" style="background-color:rgb(0, 0, 0);padding: 4px;border-radius: 4px; text-align: center;">Was this answer helpful? 
+                    <button onclick="feedback_P()" style="background-color: rgb(86, 204, 244);border-radius:4px ;">Yes</button> 
+                    <button onclick="feedback_N()" style="background-color: rgb(86, 204, 244);border-radius:4px ;">No</button>
+                </p>
+                {%endif%}
             </div>
-            <div class="bot">
-                <p>bot</p>
-            </div>
-            <div class="answer">
-                <p>hello</p>
-            </div>
-            <div class="bot">
-                <p>bot</p>
-            </div>
-            <div class="answer">
-                <p>hello</p>
-            </div>
-            <div class="bot">
-                <p>bot</p>
-            </div>
-            <div class="answer">
-                <p>hello</p>
-            </div>
-            <!-- 
-            <div class="answer">
-                <p>hello</p>
-            </div>
-            <div class="bot">
-                <p>hello</p>
-            </div>
-            <div class="answer">
-                <p>hello</p>
-            </div>
-            <div class="bot">
-                <p>hello</p>
-            </div>
-            <div class="answer">
-                <p>hello</p>
-            </div> -->
+            
+            
+            
         </div>
-        <div class="chat">
-            <input type="text" placeholder="How may i help you ?"/>
-            <button type="submit"><img src="assets/send.png"/></button>
-            <button type="submit"><img src="assets/mic.png"/></button>
+        <div class="bot" id="top-query">
+            <h3>Hope this will help!</h3>
+            <span>Following are the most related results based on your query!</span>
+            
+            <ul>
+                {%for question in top_five %}
+                <form action="/top-five-query" method="POST">
+                <input type="text" value="{{question[0]}}" id="query2" style="display: none;" name="query2" />
+                <li style="background-color: rgb(235, 117, 188);
+                margin:10px;padding: 10px;border-radius: 5px;color:black;text-align: justify;list-style: circle;">
+                {{question[1]}} ? <button style="background-color: rgb(29, 116, 146);border-radius:4px ;border: none;color: white;" type="submit">Search</button></li>
+                
+            </form>
+                {% endfor %}
+            </ul>
+            
         </div>
+        <form class="chat"  action="/submit" method="POST">
+            <input type="text" id="query" name="query" value="" placeholder="How may i help you ?"/>
+            <button onclick="getvalue()" type="submit"><img src="../static/send.png"/></button>
+            <button type="submit"><img src="../static/mic.png"/></button>
+        </form>
+        
     </div>
+    <script>
+        function getvalue(){
+        var query = document.getElementById("query").value; 
+        document.getElementById("userQ").innerText = query;
+        document.getElementById("ans").style.padding = "15px"
+        document.getElementById("ans").innerText = "loading..."
+        document.getElementById()
+        }
+
+        function feedback_N()
+        {
+            document.getElementById("chatbox").style.display = "none"
+            document.getElementById("top-query").style.padding = '20px'
+            document.getElementById("top-query").style.color = 'white'
+            document.getElementById("top-query").style.display = 'block'
+        }
+
+
+        function feedback_P()
+        {
+            document.getElementById("helpful").innerText = "Thank you for your feedback!"
+        }
+
+        function sendquery(question)
+        {
+            document.getElementById("query2").value =  question
+        }
+
+    </script>
 </body>
 </html>
