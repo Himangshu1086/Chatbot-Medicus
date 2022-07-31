@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Medicus</title>
+
+    <style>
+        .about{
+            width: 60%;
+            padding: 20px;
+            margin: auto;
+        }
+
+        .about > h1{
+            margin: 30px 0px;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(13, 76, 122, 0.584);
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        }
+
+        li{
+            font-size: 20px ; 
+            list-style: circle;
+            line-height: 25px;
+            padding: 5px;
+            text-align: justify;
+        }
+        *{
+            padding: 0%;
+            margin:1 ;
+        }
+#navbar{
+
+position:relative;
+ background-color: #000000;
+height: 100%;
+padding: 1px;
+margin-bottom: 20px;
+display: flex;
+}
+#navbar > a{
+text-decoration: none; 
+width: 20%;
+}
+
+#navbar > a> h1{
+color:white;
+letter-spacing:3px;
+padding-top: 5px;
+font-size:30px;
+padding-left: 20%;
+
+}
+#navbar > ul{
+margin-top: 18px;
+color:white;
+display: flex;
+}
+#navbar > ul> a{
+text-decoration: none;
+color: white; 
+}
+
+#navbar > ul > a > li{
+text-decoration: none;
+list-style: none;
+margin: 10px;
+font-size: 13px;
+letter-spacing: 1px;
+font-weight: lighter;
+padding: 5px; 
+/* background-color: #05394598; */
+border-bottom: solid lightblue  1px;
+
+}
+    </style>
+</head>
+<body>
+    <div id="navbar">
+        <a href="/"><h1 >Medicus</h1></a>
+        <ul>
+            <a href="/about"><Li>About</Li></a>
+            <a href="https://github.com/Himangshu1086/Chatbot-Medicus"><Li>Project Link</Li></a>
+            <a href="https://github.com/Himangshu1086/Chatbot-Medicus/blob/master/Data%20Preparation/DataPreparation.ipynb"><Li>Data Preparation</Li></a>
+            <a href="https://github.com/Himangshu1086/Chatbot-Medicus/blob/master/data-preprocessing.ipynb"><Li>Data Preprocessing</Li></a>
+            <a href="https://github.com/Himangshu1086/Chatbot-Medicus/blob/master/model-building.ipynb"><Li>Model Building</Li></a>
+            
+            
+            
+        </ul>
+    </div>
+    <div class="about">
+        <h1>Industry:</h1>
+        <div>
+            <span><li>Health</li></span>
+        </div>
+        <h1>Project Title:</h1>
+        <div>
+            <span><li>Chatbot for medical information</li></span>
+        </div>
+        <h1> Problem Statement:</h1>
+        <div>
+            <span>
+                <li>Proper knowledge of the disease, causes l, it's symptoms, what are the necessary steps that's needs to be taken etc are not able to reach to people.</li> 
+                <li>The information are scattered in the internet about not in a single place.</li>
+                <li>So, this chatbot helps in answering the users most the queries related to disease like covid, diabetes, heart attack etc and other information about fitness and nutrition.</li>
+            </span>
+        </div>
+        <h1>Project Description :</h1>
+        <div>
+            <li>Natural Learning Processing is a burning topic in present era. To play with textual data is the core idea of this project. I am creating a chatbot for medical health related information provider.</li> 
+            <li>It will provide the <b>information about the disease, it's cause, symptoms, diagnosis, treatment, and precautions</b> needs to be taken etc.</li>
+            <li>Used <b>Azure Machine Learning Studio</b> for Data preparation, Data preprocessing, Exploratory Data Analysis and Model building with <b>Azure jupyter Notebook</b> creating computer resource.</li>
+            <li>Used <b>Azure Web App</b> for deployment from github repository.</li>
+            <li>The project starts with data extraction using <b>selenium</b> Webdriver in <b>python</b>. After that the data is dump into <b>json</b> file.</li>
+            <li>The next process starts with data cleaning and preprocessing using python libraries like <b>nltk , pandas , numpy, matplotlib</b> etc.</li>
+            <li>Create intent for the dataset and built a model for intent classification. Used <b>SVM classifier</b> which provide an <b>accuracy score of 87%.</b></li>
+            <li>Based on the intent, using <b>cosine similarity</b> find the most similar query and output the answer form the cleaned dataset.</li>
+            <li>If the user is not satisfied with the answer provide the top five most similar questions.</li>
+        </div>
+        <h1>Technology Used :</h1>
+        <div>
+            <li>Flask</li>
+            <li>Jinja 2.0</li>
+            <li>Azure Machine Learning</li> 
+            <li>Virtual Machines</li>
+            <li>Azure Web Apps</li>
+            <li>Python Libraries
+                <ul>
+                    <li>sklearn</li>
+                    <li>pandas</li>
+                    <li>nltk</li>
+                    <li>matplotlib</li>
+                    <li>python</li>
+                    <li>selenium</li>
+                  
+                </ul>
+            </li>
+        </div>
+    </div>
+</body>
+</html>

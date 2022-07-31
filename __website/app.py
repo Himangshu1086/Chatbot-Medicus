@@ -1,4 +1,3 @@
-from time import time
 from flask import Flask,redirect,url_for,render_template,request
 import util
 import time 
@@ -19,6 +18,10 @@ def fun():
     return render_template('home.html')
 
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 
 
 @app.route('/submit',methods=['GET','POST'])
@@ -28,7 +31,6 @@ def submit():
         qns = res['query']
         ans = util.chat_response(qns)
         qn = util.get_text()
-        print(qn)
         return render_template('home.html' , query = qns , answer=ans , top_five = qn)
 
 

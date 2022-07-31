@@ -1,8 +1,56 @@
 body {
+    padding: 0%;
+    margin: 0%;
     background: #0F2027;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
+
+
+#navbar{
+
+    position:relative;
+     background-color: #000000a0;
+    height: 100%;
+    padding: 1px;
+    margin-bottom: 20px;
+    display: flex;
+}
+#navbar > a{
+    text-decoration: none; 
+    width: 20%;
+}
+
+#navbar > a> h1{
+    color:white;
+    letter-spacing:3px;
+    font-size:30px;
+    padding-left: 20%;
+    
+}
+#navbar > ul{
+    margin-top: 18px;
+    color:white;
+    display: flex;
+}
+#navbar > ul> a{
+    text-decoration: none;
+    color: white; 
+}
+
+#navbar > ul > a > li{
+    text-decoration: none;
+    list-style: none;
+    margin: 10px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    font-weight: lighter;
+    padding: 5px; 
+    background-color: #05394598;
+    /* border-bottom: solid lightblue  1px; */
+
+}
+
 .container{
     background-color: rgb(98, 181, 220);
     background: rgb(98, 181, 220);  /* fallback for old browsers */
@@ -14,22 +62,23 @@ body {
     position: relative;
     height: 600px;
     border-radius: 10px;
+
 }
 .chat{
     position: absolute;
-    bottom:1%;
+    bottom:0%;
     display: flex;
-    width: 95%;
-    margin:0px 10px;
+    width: 100%;
     justify-content: center;
-
+    background: linear-gradient(to right, #33aaac, #115b5c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding: 7px 0px;
 }
 .chat > input {
     padding: 10px;
     border-radius: 10px;
     text-decoration: none;
     border: none;
-    width: 500px;
+    width: 400px;
     margin: 4px;
     text-decoration: none;
     font-weight: 400;
@@ -61,7 +110,7 @@ img{
 }
 
 .bot{
-    background-color: rgb(25, 77, 111);
+    background-color: rgba(25, 77, 111, 0.80);
     width: 80%;
     margin: 10px;
     border-radius: 20px;
@@ -69,7 +118,8 @@ img{
 }
 
 .answer{
-    background: rgb(6, 43, 63);
+    background: rgba(6, 43, 63, 0.90);
+    height: auto;
     margin-left: 20%;
     margin-right: 10px;
     border-radius: 20px;
@@ -77,14 +127,19 @@ img{
 
 .bot > p{
     margin: 15px;
-    font-size: 14px;
-    line-height: 22px;
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
     letter-spacing: 1px;
+    color: #c3fff3;
 }
 
 .answer > p{
     margin: 15px;
+    font-size: 15px;
     text-align: right;
+    font-weight: 400;
+    letter-spacing: 1.2px;
 }
 
 .box-chat::-webkit-scrollbar {
@@ -94,4 +149,15 @@ img{
 
   #top-query{
     display: none;
+  }
+
+  #welcome{
+    background-color: #ffffffa2;
+    height: auto;
+    padding: 20px;
+    border-radius: 7px;
+    text-align: center; 
+    color: black; 
+    font-size: 40px; 
+    margin:100px  auto ;
   }

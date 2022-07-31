@@ -1,6 +1,4 @@
-from base64 import encode
 import pickle
-from textwrap import indent 
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
@@ -9,8 +7,8 @@ from sklearn.metrics.pairwise import cosine_similarity
 import json
 import time
 import nltk
+nltk.download('punkt')
 from nltk.stem.lancaster import LancasterStemmer
-# nltk.download('punkt')
 
 
 
@@ -28,13 +26,13 @@ def cleanup(sentence):
     return ' '.join(stemmed_words)
 
 
-model = pickle.load(open('pickles\\model.pkl','rb'))
-tfv = pickle.load(open('pickles\\tfidf.pkl','rb'))
-le = pickle.load(open('pickles\\le.pkl','rb'))
+model = pickle.load(open('pickles/model.pkl','rb'))
+tfv = pickle.load(open('pickles/tfidf.pkl','rb'))
+le = pickle.load(open('pickles/le.pkl','rb'))
 
 
 def load_dataset():
-    dataset = pd.read_csv("assets\\final-dataset.csv")
+    dataset = pd.read_csv("assets/final-dataset.csv")
     return dataset
 
 
@@ -51,14 +49,14 @@ def top_5_similar_qns(cos_sim_array):
 
 
 # function to add json for top 5 query
-def write_file(new_data, filename ="assets\\questions_top_5.txt"):
+def write_file(new_data, filename ="assets/questions_top_5.txt"):
         file_data = open(filename,'w',encoding='utf-8')
         for data in new_data :
             file_data.write(f'{data} \n')
         file_data.close()
 
 
-def get_text(filename ="assets\\questions_top_5.txt"):
+def get_text(filename ="assets/questions_top_5.txt"):
     file_data = open(filename,'r')
     queries = []
     index = []
@@ -119,7 +117,7 @@ def chat_response(query):
     print(top_5_qns)
     write_file(top_5_qns)
     print(get_text())
-    time.sleep(2)
+    time.sleep(1)
     if(top_5_match[0][0]>=0.40):
             max_score_idx = top_5_match[0][1]
             return question_set.iloc[max_score_idx].Answer
