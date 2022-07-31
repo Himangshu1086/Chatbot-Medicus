@@ -1,5 +1,8 @@
 # Chatbot for Medical Informations
 
+# Project Notebook Code Link
+
+<https://github.com/Himangshu1086/Chatbot-Medicus>
 
 # Project Title
 
