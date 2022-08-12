@@ -52,20 +52,20 @@ Natural Learning Processing is a burning topic in present era. To play with text
 
 - Azure resource group
 
-![resource group](azure_service\resource_group.jpg)
+![resource group](https://github.com/Himangshu1086/Chatbot-Medicus/blob/master/azure_service/resource_group.jpg)
 
 - Azure Web App
 
-![web app bot](azure_service\web_app_service.jpg)
+![web app bot](https://github.com/Himangshu1086/Chatbot-Medicus/blob/master/azure_service/web_app_service.jpg)
 
 - Azure Machine Learning Studio
 
-![ml studio](azure_service\Azure_ML_studio.jpg)
+![ml studio](https://github.com/Himangshu1086/Chatbot-Medicus/blob/master/azure_service/Azure_ML_studio.jpg)
 
 
 - Azure Virtual Machine
 
-![virtual_machine](azure_service\Virtual_Machine.jpg)
+![virtual_machine](https://github.com/Himangshu1086/Chatbot-Medicus/blob/master/azure_service/Virtual_Machine.jpg)
 
 
 </details>
